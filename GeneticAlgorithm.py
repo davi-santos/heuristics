@@ -16,5 +16,5 @@ class GA:
         self.population = []
 
     def initPopulation (self):
-        pass
+        gene = np.zeros()
         
