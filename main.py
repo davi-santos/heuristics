@@ -1,15 +1,18 @@
 import GeneticAlgorithm as ga
 import numpy as np
+import random
 
 def main():
-    L = 12
-    popsize = 10
-    gene = np.zeros(L, dtype=np.int)
-    gene[gene.size-1] = 1
+    temp = ga.GA()
+    temp.initPopulation()
 
-    for i in range(popsize):
-        gene = np.roll(gene,-1)
-        print(gene)
+    while temp.generation < temp.max_generations:
+        temp.RWS(5)
+        temp.printGA()
+        temp.generation += 1
+
+    print(f'bora {temp.list_prob}')
+    temp.printGA()
 
 if __name__ == "__main__":
     main()
